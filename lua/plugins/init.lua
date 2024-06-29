@@ -75,52 +75,40 @@ return {
       }
     end,
   },
-
   {
-    "smoka7/hop.nvim",
-    version = "*",
-    keys = {
-      {
-        ",",
-        function()
-          require("hop").hint_words()
-        end,
-        mode = { "n", "x", "o" },
-      },
-      {
-        "s",
-        function()
-          require("hop").hint_char2()
-        end,
-        mode = { "n", "x", "o" },
-      },
-      {
-        "f",
-        function()
-          require("hop").hint_char1 {
-            direction = require("hop.hint").HintDirection.AFTER_CURSOR,
-            current_line_only = true,
-          }
-        end,
-        mode = { "n", "x", "o" },
-      },
-      {
-        "F",
-        function()
-          require("hop").hint_char1 {
-            direction = require("hop.hint").HintDirection.BEFORE_CURSOR,
-            current_line_only = true,
-          }
-        end,
-        mode = { "n", "x", "o" },
-      },
+    "phaazon/hop.nvim",
+    branch = "v2", -- optional but strongly recommended
+    event = "VeryLazy",
+    config = function()
+      -- you can configure Hop the way you like here; see :h hop-config
+      local hop = require "hop"
+      local directions = require("hop.hint").HintDirection
+
+      hop.setup { keys = "etovxqpdygfblzhckisuran" }
+
+      vim.keymap.set("", "f", function()
+        hop.hint_char1 { direction = directions.AFTER_CURSOR, current_line_only = true }
+      end, { remap = true })
+
+      vim.keymap.set("", "F", function()
+        hop.hint_char1 { direction = directions.BEFORE_CURSOR, current_line_only = true }
+      end, { remap = true })
+
+      vim.keymap.set("", "t", function()
+        hop.hint_words()
+      end, { remap = true })
+    end,
+  },
+  {
+    "Exafunction/codeium.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "hrsh7th/nvim-cmp",
     },
-    opts = {
-      multi_windows = true,
-      keys = "htnsueoaidgcrlypmbkjvx",
-      uppercase_labels = true,
-      -- reverse_distribution = true,
-    },
+    event = "VeryLazy",
+    config = function()
+      require("codeium").setup {}
+    end,
   },
 
   -- {
