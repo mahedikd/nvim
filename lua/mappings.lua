@@ -11,7 +11,7 @@ map("n", "<leader>ws", ":w<cr>", { desc = "Save" })
 map("n", "<leader>wq", ":wq!<cr>", { desc = "Save and Quite" })
 map("n", "<leader>qq", ":q!<cr>", { desc = "Quite nvim forced" })
 map("n", "<leader>q", ":q<cr>", { desc = "Quite nvim" })
-map("n", "<leader>h", ":Hop<CR>")
+map("n", "<leader>h", ":HopWord<CR>")
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 

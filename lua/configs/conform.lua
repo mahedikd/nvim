@@ -3,7 +3,20 @@ local options = {
     lua = { "stylua" },
     css = { "prettier" },
     html = { "prettier" },
-    python = { "black" }
+    javascript = { "prettier" },
+    javascriptreact = { "prettier" },
+    typescript = { "prettier" },
+    typescriptreact = { "prettier" },
+    python = { "black" },
+    -- vue = "vue",
+    --     css = "css",
+    --     scss = "scss",
+    --     less = "less",
+    --     html = "html",
+    --     json = "json",
+    --     jsonc = "json",
+    --     yaml = "yaml",
+    --     markdown = "markdown",
   },
 
   format_on_save = {
