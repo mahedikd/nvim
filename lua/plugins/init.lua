@@ -100,17 +100,6 @@ return {
     end,
   },
   {
-    "Exafunction/codeium.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "hrsh7th/nvim-cmp",
-    },
-    event = "VeryLazy",
-    config = function()
-      require("codeium").setup {}
-    end,
-  },
-  {
     "alexghergh/nvim-tmux-navigation",
     event = "VeryLazy",
     config = function()
@@ -126,6 +115,17 @@ return {
       -- vim.keymap.set("n", "<C-Space>", nvim_tmux_nav.NvimTmuxNavigateNext)
     end,
   },
+  -- {
+  --   "Exafunction/codeium.nvim",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "hrsh7th/nvim-cmp",
+  --   },
+  --   event = "VeryLazy",
+  --   config = function()
+  --     require("codeium").setup {}
+  --   end,
+  -- },
 
   -- {
   --   "rcarriga/nvim-dap-ui",
