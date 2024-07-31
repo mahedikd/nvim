@@ -36,7 +36,7 @@ return {
       require "configs.lspconfig"
     end,
   },
-
+  
   {
     -- syntax highlighter
     "nvim-treesitter/nvim-treesitter",
@@ -51,7 +51,7 @@ return {
       },
     },
   },
-
+  
   {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
@@ -59,12 +59,12 @@ return {
       require("better_escape").setup()
     end,
   },
-
+  
   {
     "LintaoAmons/scratch.nvim",
     event = "VeryLazy",
   },
-
+  
   {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -75,6 +75,7 @@ return {
       }
     end,
   },
+  
   {
     "phaazon/hop.nvim",
     branch = "v2", -- optional but strongly recommended
@@ -99,6 +100,7 @@ return {
       end, { remap = true })
     end,
   },
+  
   {
     "alexghergh/nvim-tmux-navigation",
     event = "VeryLazy",
@@ -115,18 +117,6 @@ return {
       -- vim.keymap.set("n", "<C-Space>", nvim_tmux_nav.NvimTmuxNavigateNext)
     end,
   },
-  -- {
-  --   "Exafunction/codeium.nvim",
-  --   dependencies = {
-  --     "nvim-lua/plenary.nvim",
-  --     "hrsh7th/nvim-cmp",
-  --   },
-  --   event = "VeryLazy",
-  --   config = function()
-  --     require("codeium").setup {}
-  --   end,
-  -- },
-
   -- {
   --   "rcarriga/nvim-dap-ui",
   --   dependencies = "mfussenegger/nvim-dap",
