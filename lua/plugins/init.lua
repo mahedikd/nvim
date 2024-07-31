@@ -61,8 +61,9 @@ return {
   },
   
   {
-    "LintaoAmons/scratch.nvim",
-    config = function()
+  "LintaoAmons/scratch.nvim",
+  config = function()
+    local telescope_available = vim.g.loaded_telescope
     require("scratch").setup({
       scratch_file_dir = vim.fn.stdpath("cache") .. "/scratch",
       filetypes = { "lua", "js", "sh", "ts", "md", "txt", "py" },
@@ -77,12 +78,13 @@ return {
           insert_mode = true,
         },
       },
-      -- Command to open scratch buffers (edit, vsplit, etc.)
-      window_cmd = "edit",  -- Default is 'edit'
+      window_cmd = "edit", -- 'vsplit' | 'split' | 'edit' | 'tabedit' | 'rightbelow vsplit'
+      use_telescope = telescope_available, -- Use Telescope if available
     })
   end,
-    event = "VeryLazy",
-  },
+ event = "VeryLazy",
+}
+
   
   {
     "kylechui/nvim-surround",
