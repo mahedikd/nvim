@@ -62,6 +62,25 @@ return {
   
   {
     "LintaoAmons/scratch.nvim",
+    config = function()
+    require("scratch").setup({
+      scratch_file_dir = vim.fn.stdpath("cache") .. "/scratch",
+      filetypes = { "lua", "js", "sh", "ts", "md", "txt", "py" },
+      filetype_details = {
+        requireDir = true,
+        filename = function(filetype)
+          return "scratch." .. filetype
+        end,
+        content = { "" },
+        cursor = {
+          location = { 1, 1 },
+          insert_mode = true,
+        },
+      },
+      -- Command to open scratch buffers (edit, vsplit, etc.)
+      window_cmd = "edit",  -- Default is 'edit'
+    })
+  end,
     event = "VeryLazy",
   },
   
