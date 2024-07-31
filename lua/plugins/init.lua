@@ -36,7 +36,7 @@ return {
       require "configs.lspconfig"
     end,
   },
-  
+
   {
     -- syntax highlighter
     "nvim-treesitter/nvim-treesitter",
@@ -51,7 +51,7 @@ return {
       },
     },
   },
-  
+
   {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
@@ -59,33 +59,32 @@ return {
       require("better_escape").setup()
     end,
   },
-  
-  {
-  "LintaoAmons/scratch.nvim",
-  config = function()
-    local telescope_available = vim.g.loaded_telescope
-    require("scratch").setup({
-      scratch_file_dir = vim.fn.stdpath("cache") .. "/scratch",
-      filetypes = { "lua", "js", "sh", "ts", "md", "txt", "py" },
-      filetype_details = {
-        requireDir = true,
-        filename = function(filetype)
-          return "scratch." .. filetype
-        end,
-        content = { "" },
-        cursor = {
-          location = { 1, 1 },
-          insert_mode = true,
-        },
-      },
-      window_cmd = "edit", -- 'vsplit' | 'split' | 'edit' | 'tabedit' | 'rightbelow vsplit'
-      use_telescope = telescope_available, -- Use Telescope if available
-    })
-  end,
- event = "VeryLazy",
-}
 
-  
+  {
+    "LintaoAmons/scratch.nvim",
+    config = function()
+      local telescope_available = vim.g.loaded_telescope
+      require("scratch").setup {
+        scratch_file_dir = vim.fn.stdpath "cache" .. "/scratch",
+        filetypes = { "lua", "js", "sh", "ts", "py" },
+        filetype_details = {
+          requireDir = true,
+          filename = function(filetype)
+            return "scratch." .. filetype
+          end,
+          content = { "" },
+          cursor = {
+            location = { 1, 1 },
+            insert_mode = true,
+          },
+        },
+        window_cmd = "edit", -- 'vsplit' | 'split' | 'edit' | 'tabedit' | 'rightbelow vsplit'
+        use_telescope = telescope_available, -- Use Telescope if available
+      }
+    end,
+    event = "VeryLazy", -- Remove if unnecessary
+  },
+
   {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -96,7 +95,7 @@ return {
       }
     end,
   },
-  
+
   {
     "phaazon/hop.nvim",
     branch = "v2", -- optional but strongly recommended
@@ -121,7 +120,7 @@ return {
       end, { remap = true })
     end,
   },
-  
+
   {
     "alexghergh/nvim-tmux-navigation",
     event = "VeryLazy",
