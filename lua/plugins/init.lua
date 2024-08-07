@@ -61,31 +61,6 @@ return {
   },
 
   {
-    "LintaoAmons/scratch.nvim",
-    config = function()
-      local telescope_available = vim.g.loaded_telescope
-      require("scratch").setup {
-        scratch_file_dir = vim.fn.stdpath "cache" .. "/scratch",
-        filetypes = { "lua", "js", "sh", "ts", "py" },
-        filetype_details = {
-          requireDir = true,
-          filename = function(filetype)
-            return "scratch." .. filetype
-          end,
-          content = { "" },
-          cursor = {
-            location = { 1, 1 },
-            insert_mode = true,
-          },
-        },
-        window_cmd = "edit", -- 'vsplit' | 'split' | 'edit' | 'tabedit' | 'rightbelow vsplit'
-        use_telescope = telescope_available, -- Use Telescope if available
-      }
-    end,
-    event = "VeryLazy", -- Remove if unnecessary
-  },
-
-  {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
     event = "VeryLazy",
@@ -137,6 +112,11 @@ return {
       -- vim.keymap.set("n", "<C-Space>", nvim_tmux_nav.NvimTmuxNavigateNext)
     end,
   },
+
+  {
+    "metakirby5/codi.vim",
+    event = "VeryLazy"
+  }
   -- {
   --   "rcarriga/nvim-dap-ui",
   --   dependencies = "mfussenegger/nvim-dap",
