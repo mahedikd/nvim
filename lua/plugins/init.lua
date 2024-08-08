@@ -138,6 +138,12 @@ return {
     event = "BufEnter",
   },
 
+  {
+    "folke/twilight.nvim",
+    opts = {},
+    event = "BufEnter",
+  },
+
   --
   -- {
   --   "rcarriga/nvim-dap-ui",
