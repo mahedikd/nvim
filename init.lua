@@ -3,6 +3,11 @@ vim.g.mapleader = " "
 -- Set encoding to UTF-8
 vim.o.encoding = "utf-8"
 vim.o.fileencoding = "utf-8"
+-- Change working directory to current file
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = "*",
+  command = "silent! lcd %:p:h",
+})
 
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
