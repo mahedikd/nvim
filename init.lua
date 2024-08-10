@@ -12,7 +12,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 vim.api.nvim_create_autocmd("TextYankPost", {
   pattern = "*",
   callback = function()
-    vim.highlight.on_yank { higroup = "IncSearch", timeout = 250 }
+    vim.highlight.on_yank { timeout = 250 }
   end,
 })
 
