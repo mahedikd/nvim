@@ -8,6 +8,13 @@ vim.api.nvim_create_autocmd("BufEnter", {
   pattern = "*",
   command = "silent! lcd %:p:h",
 })
+-- Highlight on yank
+vim.api.nvim_create_autocmd("TextYankPost", {
+  pattern = "*",
+  callback = function()
+    vim.highlight.on_yank { higroup = "IncSearch", timeout = 250 }
+  end,
+})
 
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
