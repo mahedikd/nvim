@@ -3,20 +3,7 @@ return {
   {
     --  install and manage lsp and formatter
     "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        -- formatter --
-        "stylua",
-        "prettier",
-        "black",
-        -- lsp server --
-        "lua-language-server",
-        "html-lsp",
-        "css-lsp",
-        "ts_ls",
-        "pyright",
-      },
-    },
+
   },
 
   {
@@ -32,7 +19,6 @@ return {
     -- use installed lsp
     "neovim/nvim-lspconfig",
     config = function()
-      require("nvchad.configs.lspconfig").defaults()
       require "configs.lspconfig"
     end,
   },
