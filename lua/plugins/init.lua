@@ -13,7 +13,7 @@ return {
         "lua-language-server",
         "html-lsp",
         "css-lsp",
-        "typescript-language-server",
+        "ts_ls",
         "pyright",
       },
     },
